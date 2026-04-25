@@ -1,0 +1,66 @@
+:root {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: white;
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --blue: hsl(212, 86%, 64%);
+  --orange: hsl(34, 97%, 64%);
+  --font-size-36: 2.25rem;
+  --font-size-20: 1.25rem;
+  --font-size-15: 0.9375rem;
+  --font-size-13: 0.8125rem;
+  --font-weight-semibold: 600;
+  --font-weight-regular: 400;
+  --font-weight-xlight: 200;
+  --spacing-40: 2.5rem;
+  --spacing-32: 2rem;
+  --spacing-24: 1.5rem;
+  --spacing-16: 1rem;
+  --spacing-8: 0.5rem;
+  --line-height-160: 160%;
+  --line-height-140: 140%;
+  --line-height-135: 135%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin-top: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  height: 15.625rem;
+  width: 19.625;
+  padding: var(--spacing-32);
+}
+
+.card h2 {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-135);
+}
