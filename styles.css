@@ -7,6 +7,7 @@
   --cyan: hsl(180, 62%, 55%);
   --blue: hsl(212, 86%, 64%);
   --orange: hsl(34, 97%, 64%);
+  --shadow: hsla(212, 43%, 67%, 0.5);
   --font-size-36: 2.25rem;
   --font-size-20: 1.25rem;
   --font-size-15: 0.9375rem;
@@ -34,7 +35,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
 h1,
 h2,
 h3,
@@ -47,7 +47,6 @@ ol,
 li {
   margin: 0;
 }
-*/
 
 body {
   display: flex;
@@ -78,35 +77,47 @@ body {
   font-size: 1.5rem;
 }
 
-.title-wrapper p:nth-last-child {
+.title-wrapper p:last-of-type {
   margin-top: var(--spacing-16);
   font-size: var(--font-size-15);
 }
 
-.card--supervisor::before {
+.card::before {
   content: "";
-  width: 19.625rem;
-  background-color: var(--cyan);
+  width: 100%;
   height: 0.25rem;
   position: absolute;
   top: 0;
   left: 0;
 }
 
+.card--supervisor::before {
+  background-color: var(--cyan);
+}
+
+.card--team-builder::before {
+  background-color: var(--red);
+}
+
+.card--karma::before {
+  background-color: var(--orange);
+}
+
+.card--calculator::before {
+  background-color: var(--blue);
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  height: 15.625rem;
-  width: 19.625rem;
+  width: 100%;
+  max-width: 19.625rem;
   padding: var(--spacing-32);
   border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
-  border: 1px black solid;
-  margin-left: 30.5rem;
-  margin-right: 30.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 16px 24px -16px var(--cyan); /*keep modifying this 4/28/26 */
+  box-shadow: 0 1rem 2rem -0.6875rem var(--shadow);
 }
 
 .card:first-of-type {
@@ -131,7 +142,26 @@ body {
 }
 
 .card img {
-  height: 4rem;
   width: 4rem;
   align-self: flex-end;
+}
+
+.credits {
+  margin-top: 2rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.credits a {
+  color: var(--grey-500);
+  text-decoration: none;
+}
+
+.credits a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.credits a:visited {
+  color: var(--orange);
 }
