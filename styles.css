@@ -9,11 +9,11 @@
   --orange: hsl(34, 97%, 64%);
   --shadow: hsla(212, 43%, 67%, 0.5);
   --font-size-36: 2.25rem;
+  --font-size-24: 1.5rem;
   --font-size-20: 1.25rem;
   --font-size-15: 0.9375rem;
   --font-size-13: 0.8125rem;
   --font-weight-semibold: 600;
-  --font-weight-regular: 400;
   --font-weight-xlight: 200;
   --spacing-40: 2.5rem;
   --spacing-32: 2rem;
@@ -24,6 +24,9 @@
   --line-height-140: 140%;
   --line-height-135: 135%;
   --card-height: 15.625rem;
+  --card-width-mobile-tablet: 19.625rem;
+  --card-width-desktop: 21.875rem;
+  --title-wrapper-width: 33.75rem;
 }
 
 html {
@@ -60,20 +63,23 @@ body {
 
 .title-wrapper {
   text-align: center;
+  max-width: var(--title-wrapper-width);
   margin-bottom: 3.75rem;
 }
 
 .title-wrapper p:first-of-type {
   margin-bottom: 0;
+  font-weight: var(--font-weight-xlight);
 }
 
 .title-wrapper h1 {
   margin-top: 0;
+  font-weight: var(--font-weight-semibold);
 }
 
 .title-wrapper p:first-of-type,
 .title-wrapper h1 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-24);
 }
 
 .title-wrapper p:last-of-type {
@@ -118,10 +124,10 @@ body {
   height: var(--card-height);
   padding: var(--spacing-32);
   border-radius: 0.5rem;
-  /* border: 1px solid black; */
   overflow: hidden;
   position: relative;
   box-shadow: 0 1rem 2rem -0.6875rem var(--shadow);
+  max-width: var(--card-width-mobile-tablet);
 }
 
 .card h2 {
@@ -135,6 +141,7 @@ body {
 .card p {
   font-size: var(--font-size-13);
   margin-bottom: 2rem;
+  color: var(--grey-400);
 }
 
 .card img {
@@ -163,11 +170,16 @@ body {
 }
 
 /* Thanks to Dave Cross and Kevin Powell for their videos on grid-areas.
-I had forgotten about grid-areas and how to use that kind of CSS Grid. */
+I had forgotten about grid-areas and how to use that kind of CSS Grid structure. */
 
 @media screen and (min-width: 768px) {
   .title-wrapper {
     margin-bottom: 4.625rem;
+  }
+
+  .title-wrapper p:first-of-type,
+  .title-wrapper h1 {
+    font-size: var(--font-size-36);
   }
 
   .card-wrapper {
@@ -206,6 +218,10 @@ I had forgotten about grid-areas and how to use that kind of CSS Grid. */
       "b d c"
       ". d .";
     gap: var(--spacing-32);
+  }
+
+  .card {
+    max-width: var(--card-width-desktop);
   }
 
   .card--team-builder {
