@@ -1,5 +1,4 @@
 :root {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
   --grey-500: hsl(234, 12%, 34%);
   --grey-400: hsl(212, 6%, 44%);
   --white: white;
@@ -53,6 +52,7 @@ li {
 }
 
 body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,104 +1,183 @@
-# Frontend Mentor - Four card feature section
+# Frontend Mentor - Four card feature section solution
 
-![Design preview for the Four card feature section coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
+Users should be able to:
 
-Your challenge is to build out this feature section and get it looking as close to the design as possible.
+- View the optimal layout depending on their device's screen size
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Screenshot
 
-Your users should:
+![](./solution-design-screenshots/mobile.jpeg)
+![](./solution-design-screenshots/tablet.jpeg)
+![](./solution-design-screenshots/desktop.jpeg)
 
-- View the optimal layout for the site depending on their device's screen size
+### Links
 
-### Want some support on the challenge? 
+- Solution URL: (https://www.frontendmentor.io/solutions/responsive-product-preview-with-hover-and-focus-states-bTnX7sITwn)
+- Live Site URL: (https://freexm1nd.github.io/four-card-feature-section/)
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## My process
 
-## Where to find everything
+### Built with
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### What I learned
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+This challenge really tested my patience and my will! I had a really hard time figuring out how to best use grid to get the cards to sit the way I want them in all layouts. I eventually had to go back to the tutorial phase to get a refresher. I was determined to finish this one. The most challenging so far, but at the end equally the most satisfying. I learned to just keep going, even if it meant I had to step away for a bit.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Below is some code that reflects the things I learned above:
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+```html
+<main>
+  <section class="card-wrapper">
+    <div class="card card--supervisor">
+      <h2>Supervisor</h2>
+      <p>Monitors activity to identify project roadblocks</p>
+      <img class="icon" src="./images/icon-supervisor.svg" alt="" />
+    </div>
+    <div class="card card--team-builder">
+      <h2>Team Builder</h2>
+      <p>
+        Scans our talent network to create the optimal team for your project
+      </p>
+      <img class="icon" src="./images/icon-team-builder.svg" alt="" />
+    </div>
+    <div class="card card--karma">
+      <h2>Karma</h2>
+      <p>Regularly evaluates our talent to ensure quality</p>
+      <img class="icon" src="./images/icon-karma.svg" alt="" />
+    </div>
+    <div class="card card--calculator">
+      <h2>Calculator</h2>
+      <p>Uses data from past projects to provide better delivery estimates</p>
+      <img class="icon" src="./images/icon-calculator.svg" alt="" />
+    </div>
+  </section>
+</main>
+```
 
-## Using AI coding assistants
+```css
+@media screen and (min-width: 768px) {
+  .title-wrapper {
+    margin-bottom: 4.625rem;
+  }
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+  .title-wrapper p:first-of-type,
+  .title-wrapper h1 {
+    font-size: var(--font-size-36);
+  }
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      ". a a ."
+      "b b c c"
+      ". d d .";
+  }
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+  .card--team-builder {
+    grid-area: a;
+  }
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+  .card--supervisor {
+    grid-area: b;
+  }
 
-## Building your project
+  .card--karma {
+    grid-area: c;
+  }
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+  .card--calculator {
+    grid-area: d;
+  }
+}
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+@media screen and (min-width: 1110px) {
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ". a ."
+      "b a c"
+      "b d c"
+      ". d .";
+    gap: var(--spacing-32);
+  }
 
-## Deploying your project
+  .card {
+    max-width: var(--card-width-desktop);
+  }
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+  .card--team-builder {
+    grid-area: a;
+  }
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+  .card--supervisor {
+    grid-area: b;
+  }
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+  .card--calculator {
+    grid-area: c;
+  }
 
-## Create a custom `README.md`
+  .card--karma {
+    grid-area: d;
+  }
+}
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+### Continued development
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+I want to continue figuring out was to use both flexbox and CSS Grid in tandem for more complicated layouts. I know that for this challenge I could've used flexbox for all layouts, but CSS Grid made the most logical sense to use in the tablet and desktop layouts. I definitely struggled to find out how to use CSS Grid properly at first. A lot of trial and error before being reminded of grid-areas.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Useful resources
 
-## Submitting your solution
+I continue to use Responsively to look at my designs on various screen sizes and to take screenshots.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+- [Responsively App](https://responsively.app/)
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+David Cross and Kevin Powell both had videos around this specific challenge that I referenced to get the CSS Grids just right. It was a refresher for the grid-areas property specifically.
 
-## Sharing your solution
+- [David Cross](https://youtu.be/8bY9kMqWw88?si=o-8_FIF5RoBnvIbc)
+- [Kevin Powell](https://youtu.be/JFbxl_VmIx0?si=G-wmoCmggR-2JUy5)
 
-There are multiple places you can share your solution:
+### AI Collaboration
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+I used Claude in this challenge to assist in brainstorming solutions and to assist in debugging.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+## Author
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- GitHub - [Aaron Robbins](https://github.com/FREExM1ND)
+- Frontend Mentor - [@FREExM1ND](https://www.frontendmentor.io/profile/FREExM1ND)
 
-## Got feedback for us?
+## Acknowledgments
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+A big thank you to David Cross and Kevin Powell for some great tutorials that ultimately helped me complete this challenge. Both creators are great and I highly recommend anyone use them as references and guides.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+I'm thankful for the team at Responsively for creating a useful development tool. Thank you to Frontend Mentor for the challenge. I'm eager to do more.
