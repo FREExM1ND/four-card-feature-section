@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://www.frontendmentor.io/solutions/responsive-product-preview-with-hover-and-focus-states-bTnX7sITwn)
+- [Solution URL](https://www.frontendmentor.io/solutions/responsive-card-page-using-flexboxcss-grid-tandem-sP8ZlykQs6)
 - [Live Site URL](https://freexm1nd.github.io/four-card-feature-section/)
 
 ## My process
