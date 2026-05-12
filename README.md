@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://www.frontendmentor.io/solutions/responsive-product-preview-with-hover-and-focus-states-bTnX7sITwn)
-- Live Site URL: (https://freexm1nd.github.io/four-card-feature-section/)
+- [Solution URL] (https://www.frontendmentor.io/solutions/responsive-product-preview-with-hover-and-focus-states-bTnX7sITwn)
+- [Live Site URL] (https://freexm1nd.github.io/four-card-feature-section/)
 
 ## My process
 
